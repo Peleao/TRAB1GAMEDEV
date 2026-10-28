@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/arena.tscn" id="1_arena"]
+[ext_resource type="Script" path="res://scripts/window_fit.gd" id="2_fit"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Arena" parent="." instance=ExtResource("1_arena")]
+
+[node name="HudBackground" type="ColorRect" parent="."]
+offset_right = 832.0
+offset_bottom = 52.0
+color = Color(0.105882, 0.137255, 0.2, 1)
+
+[node name="WindowFit" type="Node" parent="."]
+script = ExtResource("2_fit")

@@ -26,7 +26,7 @@ func _initialize() -> void:
 			total += 1
 			inst.current = name
 			inst.failures.clear()
-			inst.call(name)
+			await inst.call(name)
 			if inst.failures.is_empty():
 				ok += 1
 			else:

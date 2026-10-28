@@ -6,12 +6,14 @@ signal cell_changed(c: Vector2i)
 
 const SRC_FLOOR := 0
 const SRC_WALL := 1
+const PLAYER_SCENE := preload("res://scenes/player.tscn")
 const ICE_TEXTURE := preload("res://assets/placeholder/ice.png")
 
 @export var level_path := "res://levels/level_01.txt"
 
 var grid: Grid
 var blocks: Dictionary = {}  # Vector2i -> Node2D
+var player: Player
 
 @onready var floor_layer: TileMapLayer = $Floor
 @onready var blocks_root: Node2D = $Blocks
@@ -25,6 +27,11 @@ func load_level(path: String) -> void:
 	grid = Grid.load_layout(path)
 	_draw_floor()
 	_rebuild_blocks()
+	if player == null:
+		player = PLAYER_SCENE.instantiate()
+		add_child(player)
+	player.grid = grid
+	player.place(grid.player_start)
 
 
 func _draw_floor() -> void:

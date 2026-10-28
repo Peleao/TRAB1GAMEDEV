@@ -28,9 +28,17 @@
 
 ## Critérios de aceite
 
-- [ ] F5 abre a arena 13×15 com borda e blocos de gelo do `level_01.txt`.
-- [ ] Setas/WASD movem o jogador uma célula por vez, com animação na direção certa; não atravessa gelo nem borda.
-- [ ] Testes passam no comando do `CLAUDE.md`.
+- [x] F5 abre a arena 13×15 com borda e blocos de gelo do `level_01.txt`.
+- [x] Setas/WASD movem o jogador uma célula por vez, com animação na direção certa; não atravessa gelo nem borda.
+- [x] Testes passam no comando do `CLAUDE.md`.
+
+## Plano de tela (ux-ui) e decisões
+
+- Divisa HUD/arena: faixa de parede de 12 px no rodapé do HUD (HUD #1B2333 de 0 a 52 px por cima da linha de parede y=-1). Escolha da pessoa (opção B).
+- Chão claro; gelo azul-claro com contorno; jogador em cor quente. Escolha da pessoa (chão claro).
+- Filtro de textura linear; clear color #1B2333 (barras ao maximizar).
+- Janela 624×768; em tela menor (ex.: 1366×768 com barra de tarefas) `scripts/window_fit.gd` reduz a janela mantendo 832:1024 e centraliza.
+- Sprites PROVISÓRIOS nossos em `assets/placeholder/` (download do Kenney Sokoban bloqueado em modo automático). Troca: caminhos em `assets/tilesets/arena_tileset.tres`, `assets/sprites/player_frames.tres` e `Arena.ICE_TEXTURE`.
 
 ## Riscos
 

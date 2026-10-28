@@ -1,0 +1,11 @@
+# Godot
+.godot/
+*.import.tmp
+/android/
+
+# Ferramentas locais (editor do Godot)
+/tools/
+
+# Sistema
+.DS_Store
+Thumbs.db

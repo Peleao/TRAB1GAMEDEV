@@ -2,7 +2,8 @@ extends SceneTree
 ## Roda todo res://tests/test_*.gd (exceto test_base.gd). Cada método test_* é um teste.
 ## Testes que precisam de nós usam `tree` (var tree: SceneTree, preenchida pelo runner).
 
-func _init() -> void:
+func _initialize() -> void:
+	await process_frame
 	var total := 0
 	var ok := 0
 	var files: Array[String] = []
